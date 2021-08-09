@@ -1,0 +1,47 @@
+{
+  "compileOnSave": true,
+  "exclude": [
+    "**/node_modules",
+    "**/.*/",
+    "node_modules/**/*",
+    "dist"
+  ],
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "alwaysStrict": true,
+    "esModuleInterop": true,
+    "declaration": true,
+    "declarationMap": true,
+    "resolveJsonModule": true,
+    "sourceMap": true,
+    "outDir": "./dist",
+    "sourceRoot": "./src",
+    "baseUrl": ".",
+    "paths": {
+      "src/*": [
+        "src/*"
+      ],
+      "tests/*": [
+        "tests/*"
+      ]
+    },
+    "plugins": [
+      {
+        "transform": "typescript-transform-paths"
+      },
+      {
+        "transform": "typescript-transform-paths",
+        "afterDeclarations": true
+      }
+    ],
+    "lib": [
+      "ES2020",
+      "ScriptHost",
+      "DOM"
+    ],
+    "newLine": "lf",
+    "module": "CommonJS",
+    "target": "ES2019",
+    "emitDecoratorMetadata": true
+  }
+}

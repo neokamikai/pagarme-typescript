@@ -1,0 +1,54 @@
+{
+  "name": "@tiscode/pagarme",
+  "version": "0.0.0",
+  "description": "",
+  "main": "dist/src/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "ttsc -p .",
+    "test": "jest",
+    "dev": "ts-node-dev --inspect ./src ./src/index.ts",
+    "lint": "eslint src",
+    "lint:fix": "eslint --fix src"
+  },
+  "types": "dist/src/index.d.ts",
+  "keywords": [
+    "tiscode",
+    "pagarme"
+  ],
+  "author": {
+    "name": "Douglas Alves Domingues",
+    "email": "douglas.domingues@tiscode.com.br",
+    "url": "https://gitlab.com/douglas.tiscode"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@types/dotenv": "^8.2.0",
+    "@types/faker": "^5.5.7",
+    "@types/jest": "^26.0.23",
+    "@types/node": "^15.0.1",
+    "@typescript-eslint/eslint-plugin": "^4.22.0",
+    "@typescript-eslint/parser": "^4.22.0",
+    "dotenv": "^10.0.0",
+    "eslint": "^7.25.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-airbnb-typescript": "^12.3.1",
+    "eslint-plugin-import": "^2.22.1",
+    "faker": "^5.5.3",
+    "husky": "^6.0.0",
+    "jest": "^26.6.3",
+    "ts-jest": "^26.5.5",
+    "ts-node": "^9.1.1",
+    "ts-node-dev": "^1.1.6",
+    "tsconfig-paths": "^3.9.0",
+    "ttypescript": "^1.5.12",
+    "typescript": "^4.2.4",
+    "typescript-transform-paths": "^2.2.3"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "pagarme": "^4.16.0"
+  }
+}
