@@ -17,7 +17,7 @@ import ICaptureTransactionParameters from '../../parameters/transaction/capture'
 import ITransactionCreateParameters, { ITransactionCreateAllFieldsParameters } from '../../parameters/transaction/create';
 import ITransactionGetListParameters from '../../parameters/transaction/getList';
 import ITransactionRefundParameters from '../../parameters/transaction/refund';
-import UpdateTransactionParameters from '../../parameters/transaction/update';
+import IUpdateTransactionParameters from '../../parameters/transaction/update';
 
 export default interface ITransactionNamespaceMethods {
   create: <TMetadata extends Object = any>(
@@ -47,9 +47,7 @@ export default interface ITransactionNamespaceMethods {
   getEvents: (
     transactionId: string, payableId: string,
   ) => Promise<APIErrorResponse | ITransactionGetEventsResponse>
-  getCardHashKey: (
-    transactionId: string,
-  ) => Promise<APIErrorResponse | ICardGenerateKeyForHashResponse>
+  getCardHashKey: () => Promise<APIErrorResponse | ICardGenerateKeyForHashResponse>
   collectPayment: (
     transactionId: string,
   ) => Promise<APIErrorResponse | ITransactionCollectPaymentResponse>
@@ -57,6 +55,6 @@ export default interface ITransactionNamespaceMethods {
     params: ITransactionCalculateInstallmentsParameters,
   ) => Promise<APIErrorResponse | ITransactionCalculateInstallmentsResponse>
   update: <TMetadata extends Object = any>(
-    transactionId: string, input: UpdateTransactionParameters<TMetadata>,
+    transactionId: string, input: IUpdateTransactionParameters<TMetadata>,
   ) => Promise<APIErrorResponse | ITransactionUpdateResponse>
 }
