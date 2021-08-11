@@ -31,7 +31,7 @@ export default interface ITransactionBase<TMetadata extends Object = any> {
    *
    * OBS: Se o pagamento for boleto, o padrão é 1
    */
-  installments?: '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12'
+  installments?: '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12' | string
 
   /**
    * Após a autorização de uma transação, você pode escolher se
@@ -39,7 +39,7 @@ export default interface ITransactionBase<TMetadata extends Object = any> {
    *
    * Caso opte por postergar a captura, atribua o valor false
    */
-  capture?: string
+  capture?: boolean
 
   /**
    * Descrição que aparecerá na fatura
@@ -47,7 +47,7 @@ export default interface ITransactionBase<TMetadata extends Object = any> {
    *
    * Máximo de 13 caracteres, sendo alfanuméricos e espaços.
    */
-  soft_descriptor: string
+  soft_descriptor?: string
 
   customer: ICustomerCreateParameters
   billing: IBilling
