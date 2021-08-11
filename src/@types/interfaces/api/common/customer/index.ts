@@ -1,6 +1,6 @@
 import CustomerDocumentType from 'src/@types/enums/customer/document/type';
 import PersonType from 'src/@types/enums/person/type';
-import IPhoneNumber from 'src/@types/interfaces/client/common/phone-number';
+import IPhoneNumber from 'src/@types/interfaces/client/parameters/common/phone-number';
 import IAddress from '../address';
 import ICustomerDocumentObject from './document';
 

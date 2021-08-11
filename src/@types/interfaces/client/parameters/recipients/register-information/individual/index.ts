@@ -1,5 +1,5 @@
 import { PersonTypeEnums } from 'src/@types/enums/person/type';
-import IPhoneNumber from 'src/@types/interfaces/client/common/phone-number';
+import IPhoneNumber from 'src/@types/interfaces/client/parameters/common/phone-number';
 
 export default interface IRegisterInformationIndividual {
   type: typeof PersonTypeEnums.PersonTypeIndividual
