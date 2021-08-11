@@ -1,5 +1,6 @@
-import Customer from '../../../common/customer';
+import ICustomerObject from 'src/@types/interfaces/api/common/customer';
 
-export default interface IUpdateCustomerParameters extends Pick<Customer, 'name' | 'email'>{
+export default interface IUpdateCustomerParameters
+  extends Pick<ICustomerObject, 'name' | 'email'> {
 
 }
