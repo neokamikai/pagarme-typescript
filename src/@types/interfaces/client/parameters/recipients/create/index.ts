@@ -1,4 +1,5 @@
 import AutomaticAnticipationType from 'src/@types/enums/automatic-anticipation-type';
+import TransferInterval from 'src/@types/enums/transfer-interval';
 import ICreateBankAccountParameters from '../../bank-account/create';
 import IRegisterInformationCorporation from '../register-information/corporation';
 import IRegisterInformationIndividual from '../register-information/individual';
@@ -11,7 +12,7 @@ export default interface ICreateRecipientParameters<TMetadata extends any = any>
   /**
    * Frequência na qual o recebedor irá ser pago. Valores possíveis: daily, weekly, monthly
    */
-  transfer_interval: 'daily' | 'weekly' | 'monthly'
+  transfer_interval: TransferInterval
   /**
    * Dia no qual o recebedor vai ser pago. Depende do transfer_interval.
    *
