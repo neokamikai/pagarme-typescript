@@ -1,5 +1,5 @@
 import Customer from '../../../common/customer';
 
-export default interface UpdateCustomerParameters extends Pick<Customer, 'name' | 'email'>{
+export default interface IUpdateCustomerParameters extends Pick<Customer, 'name' | 'email'>{
 
 }
