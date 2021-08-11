@@ -1,11 +1,11 @@
 import APIErrorResponse from 'src/@types/interfaces/api/responses/error';
 import IPayablesGetDetailResponse from 'src/@types/interfaces/api/responses/namespaces/payables/getDetail';
 import IPayablesGetListResponse from 'src/@types/interfaces/api/responses/namespaces/payables/getList';
-import IGetPayablesListParameters from '../../parameters/payables/list';
+import IPayablesGetListParameters from '../../parameters/payables/getList';
 
 export default interface IPayablesNamespaceMethods {
   getList: (
-    params: IGetPayablesListParameters,
+    params: IPayablesGetListParameters,
   ) => Promise<APIErrorResponse | IPayablesGetListResponse>
   getDetail: (payableId: string) => Promise<APIErrorResponse | IPayablesGetDetailResponse>
 }
