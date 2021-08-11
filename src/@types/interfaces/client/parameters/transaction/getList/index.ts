@@ -5,7 +5,7 @@ import IAddress from 'src/@types/interfaces/api/common/address';
 import PhoneNumber from 'src/@types/interfaces/client/parameters/common/phone-number';
 import ICustomerCreateParameters from '../../customer/create';
 
-export default interface TransactionGetListParameters<TMetadata extends Object = any> {
+export default interface ITransactionGetListParameters<TMetadata extends Object = any> {
   /**
    * Retorna n resultados, com um máximo de 1000
    */
