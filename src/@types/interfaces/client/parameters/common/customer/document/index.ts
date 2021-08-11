@@ -1,6 +1,6 @@
 import CustomerDocumentType from 'src/@types/enums/customer/document/type';
 
-export default interface CustomerDocument {
+export default interface ICustomerDocumentInput {
   /**
    * Obrigatório. Tipo de documento.
    * Para compradores brasileiros, deve ser fornecido ao menos
@@ -12,5 +12,8 @@ export default interface CustomerDocument {
    * um campo personalizado (type other).
    */
   type: CustomerDocumentType
+  /**
+   * Obrigatório. Número do documento
+   */
   number: string
 }
