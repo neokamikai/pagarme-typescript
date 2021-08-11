@@ -1,5 +1,5 @@
 import CustomerType from 'src/@types/enums/customer/type';
-import CustomerDocument from '../../../common/customer/document';
+import ICustomerDocumentInput from '../../common/customer/document';
 
 export default interface ICustomerCreateParameters {
   /**
@@ -35,5 +35,5 @@ export default interface ICustomerCreateParameters {
   /**
    * Documento. Contém campos 'type' para tipo de documento e 'number' para número do documento.
    */
-  documents: Array<CustomerDocument>
+  documents: Array<ICustomerDocumentInput>
 }
