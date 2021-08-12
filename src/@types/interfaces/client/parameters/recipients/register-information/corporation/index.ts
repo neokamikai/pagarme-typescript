@@ -5,7 +5,7 @@ import IManagingPartner from './managing-partner';
 export default interface IRegisterInformationCorporation {
   type: typeof PersonTypeEnums.PersonTypeCorporation
   document_number: string
-  name: string
+  company_name: string
   site_url: string
   email: string
   phone_numbers: Array<IPhoneNumber>
