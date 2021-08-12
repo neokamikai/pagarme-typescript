@@ -145,8 +145,8 @@ export default class Client {
     return this.execByRouteId(routes.routeIds.refund.cancel, args, {});
   }
 
-  private cardCreate(...args) {
-    return this.execByRouteId(routes.routeIds.card.create, args, {});
+  private cardCreate(params: any) {
+    return this.execByRouteId(routes.routeIds.card.create, [], params);
   }
 
   private queryCardList(params) {
@@ -213,8 +213,8 @@ export default class Client {
     return this.execByRouteId(routes.routeIds.postback.getDetail, args, {});
   }
 
-  private queryPayablesList(...args) {
-    return this.execByRouteId(routes.routeIds.payables.getList, args, {});
+  private queryPayablesList(filters: any) {
+    return this.execByRouteId(routes.routeIds.payables.getList, [], filters);
   }
 
   private queryPayablesDetail(...args) {
@@ -237,8 +237,8 @@ export default class Client {
     return this.execByRouteId(routes.routeIds.transfers.getDetail, args, {});
   }
 
-  private bulkAnticipationsCreate(...args) {
-    return this.execByRouteId(routes.routeIds.bulkAnticipations.create, args, {});
+  private bulkAnticipationsCreate(recipientId: string, params: any) {
+    return this.execByRouteId(routes.routeIds.bulkAnticipations.create, [recipientId], params);
   }
 
   private bulkAnticipationsConfirm(...args) {
@@ -253,20 +253,20 @@ export default class Client {
     return this.execByRouteId(routes.routeIds.bulkAnticipations.delete, args, {});
   }
 
-  private queryBulkAnticipationsLimits(...args) {
-    return this.execByRouteId(routes.routeIds.bulkAnticipations.getLimits, args, {});
+  private queryBulkAnticipationsLimits(recipientId: string, params:any) {
+    return this.execByRouteId(routes.routeIds.bulkAnticipations.getLimits, [recipientId], params);
   }
 
-  private queryBulkAnticipationsList(...args) {
-    return this.execByRouteId(routes.routeIds.bulkAnticipations.getList, args, {});
+  private queryBulkAnticipationsList(recipientId: string, filters:any) {
+    return this.execByRouteId(routes.routeIds.bulkAnticipations.getList, [recipientId], filters);
   }
 
   private bankAccountsCreate(payload: any) {
     return this.execByRouteId(routes.routeIds.bankAccounts.create, [], payload);
   }
 
-  private bankAccountsGetList(...args) {
-    return this.execByRouteId(routes.routeIds.bankAccounts.getList, args, {});
+  private bankAccountsGetList(filters: any) {
+    return this.execByRouteId(routes.routeIds.bankAccounts.getList, [], filters);
   }
 
   private bankAccountsGetDetail(...args) {
@@ -293,24 +293,26 @@ export default class Client {
     return this.execByRouteId(routes.routeIds.recipients.getBalance, args, {});
   }
 
-  private queryRecipientsBalanceOperations(...args) {
-    return this.execByRouteId(routes.routeIds.recipients.getBalanceOperations, args, {});
+  private queryRecipientsBalanceOperations(recipientId: string, params: any) {
+    return this.execByRouteId(
+      routes.routeIds.recipients.getBalanceOperations, [recipientId], params,
+    );
   }
 
   private queryRecipientsBalanceOperationDetail(...args) {
     return this.execByRouteId(routes.routeIds.recipients.getBalanceOperationDetail, args, {});
   }
 
-  private customerCreate(...args) {
-    return this.execByRouteId(routes.routeIds.customer.create, args, {});
+  private customerCreate(params: any) {
+    return this.execByRouteId(routes.routeIds.customer.create, [], params);
   }
 
-  private customerUpdate(...args) {
-    return this.execByRouteId(routes.routeIds.customer.update, args, {});
+  private customerUpdate(customerId: string, params: any) {
+    return this.execByRouteId(routes.routeIds.customer.update, [customerId], params);
   }
 
-  private customerGetList(...args) {
-    return this.execByRouteId(routes.routeIds.customer.getList, args, {});
+  private customerGetList(filters: any) {
+    return this.execByRouteId(routes.routeIds.customer.getList, [], filters);
   }
 
   private customerGetDetail(...args) {
@@ -456,7 +458,7 @@ export default class Client {
   private queryTransactionList<TMetadata extends Object = any>(
     input: QueryListTransactionsParameters<TMetadata>,
   ) {
-    return this.execByRouteId(routes.routeIds.transaction.getList, [], {}, {}, input);
+    return this.execByRouteId(routes.routeIds.transaction.getList, [], input, {});
   }
 
   private queryTransactionByTransactionId(
