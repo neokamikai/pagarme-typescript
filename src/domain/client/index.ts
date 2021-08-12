@@ -261,8 +261,8 @@ export default class Client {
     return this.execByRouteId(routes.routeIds.bulkAnticipations.getList, args, {});
   }
 
-  private bankAccountsCreate(...args) {
-    return this.execByRouteId(routes.routeIds.bankAccounts.create, args, {});
+  private bankAccountsCreate(payload: any) {
+    return this.execByRouteId(routes.routeIds.bankAccounts.create, [], payload);
   }
 
   private bankAccountsGetList(...args) {
@@ -273,16 +273,16 @@ export default class Client {
     return this.execByRouteId(routes.routeIds.bankAccounts.getDetail, args, {});
   }
 
-  private recipientsCreate(...args) {
-    return this.execByRouteId(routes.routeIds.recipients.create, args, {});
+  private recipientsCreate(params: any) {
+    return this.execByRouteId(routes.routeIds.recipients.create, [], params);
   }
 
-  private recipientsUpdate(...args) {
-    return this.execByRouteId(routes.routeIds.recipients.update, args, {});
+  private recipientsUpdate(id: string, params: any) {
+    return this.execByRouteId(routes.routeIds.recipients.update, [id], params);
   }
 
-  private queryRecipientsList(...args) {
-    return this.execByRouteId(routes.routeIds.recipients.getList, args, {});
+  private queryRecipientsList(filters: any) {
+    return this.execByRouteId(routes.routeIds.recipients.getList, [], filters);
   }
 
   private queryRecipientsDetail(...args) {
