@@ -1,7 +1,5 @@
 import axios, { AxiosInstance, Method } from 'axios';
 import APIErrorResponse from 'src/@types/interfaces/api/responses/error';
-import TransactionPayableResponse from 'src/@types/interfaces/api/responses/namespaces/transaction/payable';
-import TransactionPayablesResponse from 'src/@types/interfaces/api/responses/namespaces/transaction/payables';
 import HttpResponse from 'src/@types/interfaces/client/http-response';
 import IAntifraudAnalysesNamespaceMethods from 'src/@types/interfaces/client/namespaces/antifraud-analyses';
 import IBalanceNamespaceMethods from 'src/@types/interfaces/client/namespaces/balance';
@@ -15,7 +13,7 @@ import IRecipientsNamespaceMethods from 'src/@types/interfaces/client/namespaces
 import ITransactionNamespaceMethods from 'src/@types/interfaces/client/namespaces/transaction';
 import ClientOptions from 'src/@types/interfaces/client/options';
 import ICaptureTransactionParameters from 'src/@types/interfaces/client/parameters/transaction/capture';
-import QueryListTransactionsParameters from 'src/@types/interfaces/client/parameters/transaction/query/list';
+import QueryListTransactionsParameters from 'src/@types/interfaces/client/parameters/transaction/getList';
 import RefundTransactionParameters from 'src/@types/interfaces/client/parameters/transaction/refund';
 import PartialRefundTransactionParameters from 'src/@types/interfaces/client/parameters/transaction/refund/partial';
 import SplitRefundTransactionParameters from 'src/@types/interfaces/client/parameters/transaction/refund/split';
@@ -471,8 +469,7 @@ export default class Client {
     transactionId: string,
   ) {
     return this.execByRouteId(routes.routeIds.transaction.getPayables, [transactionId], {})
-      .then((response) => response.data as (TransactionPayablesResponse
-      | APIErrorResponse));
+      .then((response) => response.data as (any | APIErrorResponse));
   }
 
   private queryTransactionPayableByTransactionIdAndPayableId(
@@ -480,8 +477,7 @@ export default class Client {
   ) {
     return this.execByRouteId(routes.routeIds.transaction.getPayable,
       [transactionId, payableId], {})
-      .then((response) => response.data as (TransactionPayableResponse
-      | APIErrorResponse));
+      .then((response) => response.data as (any | APIErrorResponse));
   }
 
   private queryTransactionOperations(
