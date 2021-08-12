@@ -54,7 +54,7 @@ export default interface ITransactionNamespaceMethods {
   calculateInstallments: (
     params: ITransactionCalculateInstallmentsParameters,
   ) => Promise<APIErrorResponse | ITransactionCalculateInstallmentsResponse>
-  update: <TMetadata extends Object = any>(
-    transactionId: string, input: IUpdateTransactionParameters<TMetadata>,
+  update: (
+    transactionId: string, input: IUpdateTransactionParameters,
   ) => Promise<APIErrorResponse | ITransactionUpdateResponse>
 }

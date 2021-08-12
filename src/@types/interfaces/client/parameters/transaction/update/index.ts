@@ -1,5 +1,5 @@
-import ITransactionObject from 'src/@types/interfaces/api/common/transaction';
+import TransactionStatus from 'src/@types/enums/transaction/status';
 
-export default interface IUpdateTransactionParameters<TMetadata extends Object>
-  extends ITransactionObject<TMetadata>{
+export default interface IUpdateTransactionParameters {
+  status: TransactionStatus
 }
