@@ -44,31 +44,31 @@ export default interface ICreateRecipientParameters<TMetadata extends any = any>
   /**
    * Porcentagem do valor passível de antecipação para este recebedor.
    */
-  anticipatable_volume_percentage: string
+  anticipatable_volume_percentage?: string
 
   /**
    * Se o recebedor está habilitado para receber automaticamente
    * ou não o valor disponível para antecipação.
    */
-  automatic_anticipation_enabled: string
+  automatic_anticipation_enabled: boolean
 
   /**
    * Configuração de como devemos criar as antecipações automáticas do recebedor.
    * Valor full para criarmos antecipações seguindo a regra de volume máximo antecipável.
    * Valor 1025, para criarmos antecipações de vendas inteiras, modelos D+X e 10/25.
    */
-  automatic_anticipation_type: AutomaticAnticipationType
+  automatic_anticipation_type?: AutomaticAnticipationType
 
   /**
    * Lista de dias em que devemos criar as antecipações automáticas.
    */
-  automatic_anticipation_days: string
+  automatic_anticipation_days?: string
 
   /**
    * Parâmetro de quantos dias, contados do dia da antecipação para trás,
    * devemos desconsiderar na criação desta antecipação.
    */
-  automatic_anticipation_1025_delay: string
+  automatic_anticipation_1025_delay?: string
 
   /**
    * Campo usado para receber informações cadastrais de um recebedor.
