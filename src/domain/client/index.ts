@@ -23,6 +23,9 @@ import routes from './routes';
 export type TransactionRefund<TMetadata> = RefundTransactionParameters<TMetadata> |
 PartialRefundTransactionParameters<TMetadata> | SplitRefundTransactionParameters<TMetadata>;
 
+/**
+ * @deprecated This Client is for old API Versions (until V4), use ClientV5 instead
+ */
 export default class Client {
   private axios: AxiosInstance;
 
