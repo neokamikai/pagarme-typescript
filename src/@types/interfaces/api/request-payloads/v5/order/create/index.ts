@@ -39,7 +39,7 @@ export default interface ICreateOrderPayload {
   /**
    * Objeto chave/valor utilizado para armazenar informações adicionais sobre o pedido.
    */
-  metadata: { [id: string]: string }
+  metadata?: { [id: string]: string }
   /**
    * Dados do dispositivo
    */
