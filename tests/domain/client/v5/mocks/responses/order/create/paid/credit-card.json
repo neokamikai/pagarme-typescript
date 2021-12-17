@@ -1,0 +1,169 @@
+{
+  "id": "or_8PqaQASOqfe9ae7d",
+  "code": "L671SJGIXX",
+  "amount": 20000,
+  "currency": "BRL",
+  "closed": true,
+  "items": [
+    {
+      "id": "oi_N0paMAbIJSPkw6XA",
+      "type": "product",
+      "description": "Red pill",
+      "amount": 10000,
+      "quantity": 1,
+      "status": "active",
+      "created_at": "2021-12-17T03:04:10Z",
+      "updated_at": "2021-12-17T03:04:10Z",
+      "code": "item-1"
+    },
+    {
+      "id": "oi_2gKyj0WhKWfzjwA4",
+      "type": "product",
+      "description": "Blue pill",
+      "amount": 10000,
+      "quantity": 1,
+      "status": "active",
+      "created_at": "2021-12-17T03:04:10Z",
+      "updated_at": "2021-12-17T03:04:10Z",
+      "code": "item-2"
+    }
+  ],
+  "customer": {
+    "id": "cus_Rd0rjaEiANiNg3qM",
+    "name": "Tony Stark",
+    "email": "mopheus2@nabucodonozor.com",
+    "code": "#cli-2",
+    "document": "34718659850",
+    "type": "individual",
+    "delinquent": false,
+    "created_at": "2021-12-17T00:57:37Z",
+    "updated_at": "2021-12-17T01:46:07Z",
+    "phones": {
+      "home_phone": {
+        "country_code": "55",
+        "number": "888889999",
+        "area_code": "11"
+      },
+      "mobile_phone": {
+        "country_code": "55",
+        "number": "999998888",
+        "area_code": "11"
+      }
+    },
+    "metadata": {
+      "clientId": "xpto"
+    }
+  },
+  "shipping": {
+    "description": "Express Shipping",
+    "recipient_name": "Tony Stark",
+    "recipient_phone": "24586787867",
+    "address": {
+      "city": "Malibu",
+      "state": "CA",
+      "country": "US",
+      "zip_code": "90265",
+      "line_1": "10880, Malibu Point, Malibu Central"
+    },
+    "max_delivery_date": "2022-07-31T00:00:00Z",
+    "estimated_delivery_date": "2022-07-30T00:00:00Z",
+    "type": "Express"
+  },
+  "status": "paid",
+  "created_at": "2021-12-17T03:04:10Z",
+  "updated_at": "2021-12-17T03:04:11Z",
+  "closed_at": "2021-12-17T03:04:10Z",
+  "charges": [
+    {
+      "id": "ch_Dpbx5bbsXSX95AJ7",
+      "code": "L671SJGIXX",
+      "gateway_id": "15414444",
+      "amount": 20000,
+      "paid_amount": 20000,
+      "status": "paid",
+      "currency": "BRL",
+      "payment_method": "credit_card",
+      "paid_at": "2021-12-17T03:04:11Z",
+      "created_at": "2021-12-17T03:04:10Z",
+      "updated_at": "2021-12-17T03:04:11Z",
+      "customer": {
+        "id": "cus_Rd0rjaEiANiNg3qM",
+        "name": "Tony Stark",
+        "email": "mopheus2@nabucodonozor.com",
+        "code": "#cli-2",
+        "document": "34718659850",
+        "type": "individual",
+        "delinquent": false,
+        "created_at": "2021-12-17T00:57:37Z",
+        "updated_at": "2021-12-17T01:46:07Z",
+        "phones": {
+          "home_phone": {
+            "country_code": "55",
+            "number": "888889999",
+            "area_code": "11"
+          },
+          "mobile_phone": {
+            "country_code": "55",
+            "number": "999998888",
+            "area_code": "11"
+          }
+        },
+        "metadata": {
+          "clientId": "xpto"
+        }
+      },
+      "last_transaction": {
+        "id": "tran_QgMJYBTG4Sr8b4BA",
+        "transaction_type": "credit_card",
+        "gateway_id": "15414444",
+        "amount": 20000,
+        "status": "captured",
+        "success": true,
+        "installments": 1,
+        "statement_descriptor": "AVENGERS",
+        "acquirer_name": "pagarme",
+        "acquirer_tid": "15414444",
+        "acquirer_nsu": "15414444",
+        "acquirer_auth_code": "309210",
+        "acquirer_return_code": "0000",
+        "operation_type": "auth_and_capture",
+        "card": {
+          "id": "card_Ma9ZOltQJs6RYzGy",
+          "first_six_digits": "400000",
+          "last_four_digits": "0010",
+          "brand": "Visa",
+          "holder_name": "Tony Stark",
+          "exp_month": 1,
+          "exp_year": 2030,
+          "status": "active",
+          "type": "credit",
+          "created_at": "2021-12-17T00:57:37Z",
+          "updated_at": "2021-12-17T03:04:10Z",
+          "billing_address": {
+            "street": "Malibu Point",
+            "number": "10880",
+            "zip_code": "90265",
+            "neighborhood": "Malibu Central",
+            "city": "Malibu",
+            "state": "CA",
+            "country": "US",
+            "line_1": "10880, Malibu Point, Malibu Central"
+          }
+        },
+        "created_at": "2021-12-17T03:04:10Z",
+        "updated_at": "2021-12-17T03:04:10Z",
+        "gateway_response": {
+          "code": "200",
+          "errors": []
+        },
+        "antifraud_response": {
+          "status": "approved",
+          "score": "very_low",
+          "provider_name": "pagarme"
+        },
+        "metadata": {}
+      }
+    }
+  ],
+  "checkouts": []
+}
