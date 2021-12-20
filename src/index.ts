@@ -33,10 +33,14 @@ import CustomerGenderType, { CustomerGenderEnums } from './@types/enums/customer
 import CustomerTypeV5, { CustomerTypeEnums } from './@types/enums/customer/v5/type';
 
 import PaymentMethodType, { PaymentMethodEnums } from './@types/enums/payment-method/v5';
+import detectCardBrandV5 from './core/helpers/detect-card-brand/v5';
 
 export { IPaymentV5 };
 export namespace PagarMe {
   export namespace V5 {
+    export namespace Utils {
+      export const detectCardBrand = detectCardBrandV5;
+    }
     export type Client = ClientV5;
     export namespace Types {
       export namespace Common {
