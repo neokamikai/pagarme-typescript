@@ -24,6 +24,10 @@ export default interface ICreditCardPaymentCreditCardCard {
    */
   exp_month: string
   /**
+   * Ano de vencimento do cartão. Formatos: yy ou yyyy.
+   */
+  exp_year: string
+  /**
    * Código de segurança do cartão. O campo aceita 4 ou 3 caracteres, variando por bandeira.
    */
   cvv: string
