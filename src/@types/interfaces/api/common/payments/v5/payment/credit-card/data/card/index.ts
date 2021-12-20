@@ -1,3 +1,4 @@
+import CardBrandTypeV5 from 'src/@types/enums/card-brand/v5';
 import IAddress from 'src/@types/interfaces/api/common/address/v5';
 
 export default interface ICreditCardPaymentCreditCardCard {
@@ -38,7 +39,7 @@ export default interface ICreditCardPaymentCreditCardCard {
    * Para voucher, temos como valores possíveis:
    * Alelo, VR ou Sodexo.
    */
-  brand: string
+  brand: CardBrandTypeV5
   /**
    * Indica a label do cartão
    */
