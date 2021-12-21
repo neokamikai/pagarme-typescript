@@ -6,7 +6,8 @@ const supportedV5Cards = Object.values(CardBrandTypeV5Enums)
 
 const detectCardBrandV5 = (cardNumber: string) => {
   const foundTypes = cardType(cardNumber);
-  const foundType = foundTypes.find((cardBrand) => supportedV5Cards.includes(cardBrand.type));
-  return (foundType as any) as CardBrandType;
+  const foundType = foundTypes
+    .find((cardBrand) => supportedV5Cards.includes(cardBrand.type));
+  return (({ ...foundType }).niceType as any) as CardBrandType;
 };
 export default detectCardBrandV5;
