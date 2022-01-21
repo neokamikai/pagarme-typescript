@@ -1,5 +1,5 @@
 import BankAccountTypeV5 from 'src/@types/enums/bank-account-type/v5';
-import PersonType from 'src/@types/enums/person/type';
+import PersonTypeV5 from 'src/@types/enums/person/type/v5';
 
 export default interface IBankAccountInputV5 {
   /**
@@ -29,7 +29,7 @@ export default interface IBankAccountInputV5 {
   /**
    * Tipo do documento. "individual" ou "company"
    */
-  holder_type: PersonType
+  holder_type: PersonTypeV5
   /**
    * Número do documento do titular da conta.
    * Deve ser igual ao documento do recebedor. Somente números
