@@ -1,6 +1,9 @@
 import axios, { AxiosInstance, AxiosResponse, Method } from 'axios';
-import ICreateOrderPayload from 'src/@types/interfaces/api/request-payloads/v5/order/create';
 import ClientOptions from 'src/@types/interfaces/client/options/v5';
+import {
+  ICreateOrderPayload, ICreateReceiverPayload,
+} from 'src/@types/interfaces/api/request-payloads/v5';
+import Responses from 'src/@types/interfaces/api/responses';
 
 interface IExecOptions {
   method: Method
@@ -56,6 +59,19 @@ export default class ClientV5 {
     return this.exec({
       method: 'POST',
       url: '/orders',
+      body: payload,
+    });
+  }
+
+  /**
+   * Creates recipient
+   * @param payload Recipient data to be created
+   * @returns Created recipient
+   */
+  public createRecipient(payload: ICreateReceiverPayload) {
+    return this.exec<Responses.V5.Recipient.Create>({
+      method: 'POST',
+      url: '/recipients',
       body: payload,
     });
   }
