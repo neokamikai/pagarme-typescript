@@ -34,6 +34,15 @@ import CustomerTypeV5, { CustomerTypeEnums } from './@types/enums/customer/v5/ty
 
 import PaymentMethodType, { PaymentMethodEnums } from './@types/enums/payment-method/v5';
 import detectCardBrandV5 from './core/helpers/detect-card-brand/v5';
+import ApiResponses from './@types/interfaces/api/responses';
+import ICreateRecipientPayloadV5 from './@types/interfaces/api/request-payloads/v5/recipient/create';
+import IRecipientV5 from './@types/interfaces/api/common/recipient/v5';
+import PersonTypeV5 from './@types/enums/person/type/v5';
+import IBankAccountV5 from './@types/interfaces/api/common/bank-account/v5';
+import IAutomaticAnticipationSettingsV5 from './@types/interfaces/api/common/v5/settings/automatic-anticipation';
+import IRecipientGatewayRecipientV5 from './@types/interfaces/api/common/recipient/v5/gateway';
+import ITransferSettingsV5 from './@types/interfaces/api/common/v5/settings/transfer';
+import RecipientPaymentModeV5Type from './@types/enums/recipient/payment-mode/v5';
 
 export { IPaymentV5 };
 export namespace PagarMe {
@@ -70,6 +79,14 @@ export namespace PagarMe {
             export type DebitCard = typeof PaymentMethodEnums.PaymentMethodDebitCard;
           }
         }
+        export namespace Recipient {
+          export type RecipientPaymentModeType = RecipientPaymentModeV5Type;
+          export type ITransferSettings = ITransferSettingsV5;
+          export type IRecipientGatewayRecipient = IRecipientGatewayRecipientV5;
+          export type IAutomaticAnticipationSettings = IAutomaticAnticipationSettingsV5;
+        }
+        export type IBankAccount = IBankAccountV5;
+        export type PersonType = PersonTypeV5;
         export type IPayment = IPaymentV5;
         export type IAddress = IAddressV5;
         export type ICustomer = ICustomerV5;
@@ -77,6 +94,7 @@ export namespace PagarMe {
         export type IShipping = IShippingV5;
         export type IPayments = IPaymentsV5;
         export type IDevice = IDeviceInfo;
+        export type IRecipient = IRecipientV5;
       }
       export namespace Payment {
         export type ICreditCard = IPaymentCreditCardV5;
@@ -111,6 +129,16 @@ export namespace PagarMe {
         export type ISafetyPay = IPaymentSafetyPayV5;
       }
       export namespace API {
+        export namespace Recipient {
+          export namespace Create {
+            export namespace Request {
+              export type Payload = ICreateRecipientPayloadV5;
+            }
+            export namespace Response {
+              export type Body = ApiResponses.V5.Recipient.Create;
+            }
+          }
+        }
         export namespace Order {
           export namespace Create {
             export namespace Request {
