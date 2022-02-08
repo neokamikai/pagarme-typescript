@@ -1,7 +1,7 @@
 import PersonTypeV5 from 'src/@types/enums/person/type/v5';
 import RecipientStatusType from 'src/@types/enums/recipient/status/v5';
 
-export default interface IUpdateReceiverPayload {
+export default interface IUpdateRecipientPayload {
   /**
    * Nome do recebedor. Max:128 caracteres
    */
