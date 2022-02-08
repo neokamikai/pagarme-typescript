@@ -101,4 +101,11 @@ export default class ClientV5 {
       body: payload,
     });
   }
+
+  public getRecipientBalance(recipientId: string) {
+    return this.exec<Responses.V5.Recipient.Balance>({
+      method: 'GET',
+      url: `/recipients/${recipientId}/balance`,
+    });
+  }
 }
