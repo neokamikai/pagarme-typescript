@@ -6,6 +6,7 @@ import {
 import Responses from 'src/@types/interfaces/api/responses';
 import IUpdateReceiverPayload from 'src/@types/interfaces/api/request-payloads/v5/recipient/update';
 import IUpdateReceiverBankAccountPayload from 'src/@types/interfaces/api/request-payloads/v5/recipient/update/bank-account';
+import IUpdateReceiverTransferSettingsPayload from 'src/@types/interfaces/api/request-payloads/v5/recipient/transfer/settings';
 
 interface IExecOptions {
   method: Method
