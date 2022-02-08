@@ -4,6 +4,8 @@ import {
   ICreateOrderPayload, ICreateReceiverPayload,
 } from 'src/@types/interfaces/api/request-payloads/v5';
 import Responses from 'src/@types/interfaces/api/responses';
+import IUpdateReceiverPayload from 'src/@types/interfaces/api/request-payloads/v5/recipient/update';
+import IUpdateReceiverBankAccountPayload from 'src/@types/interfaces/api/request-payloads/v5/recipient/update/bank-account';
 
 interface IExecOptions {
   method: Method
@@ -72,6 +74,30 @@ export default class ClientV5 {
     return this.exec<Responses.V5.Recipient.Create>({
       method: 'POST',
       url: '/recipients',
+      body: payload,
+    });
+  }
+
+  /**
+   * Update Recipient
+   */
+  public updateRecipient(recipientId: string, payload: IUpdateReceiverPayload) {
+    return this.exec<Responses.V5.Recipient.Create>({
+      method: 'PUT',
+      url: `/recipients/${recipientId}`,
+      body: payload,
+    });
+  }
+
+  /**
+   * Update Recipient Bank Account
+   */
+  public updateRecipientBankAccount(
+    recipientId: string, payload: IUpdateReceiverBankAccountPayload,
+  ) {
+    return this.exec<Responses.V5.Recipient.Create>({
+      method: 'PATCH',
+      url: `/recipients/${recipientId}/default-bank-account`,
       body: payload,
     });
   }
