@@ -90,6 +90,19 @@ export default class ClientV5 {
   }
 
   /**
+   * Update Recipient Transfer Settings
+   */
+  public updateRecipientTransferSettings(
+    recipientId: string, payload: IUpdateReceiverTransferSettingsPayload,
+  ) {
+    return this.exec<Responses.V5.Recipient.TransferSettings>({
+      method: 'PATCH',
+      url: `/recipients/${recipientId}/transfer-settings`,
+      body: payload,
+    });
+  }
+
+  /**
    * Update Recipient Bank Account
    */
   public updateRecipientBankAccount(
