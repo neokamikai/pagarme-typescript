@@ -147,6 +147,15 @@ export namespace PagarMe {
               export type Body = ApiResponses.V5.Recipient.Update;
             }
           }
+          export namespace Balance {
+            export namespace Request {
+              /** recipient ID only */
+              export type Payload = string;
+            }
+            export namespace Response {
+              export type Body = ApiResponses.V5.Recipient.Balance;
+            }
+          }
         }
         export namespace Order {
           export namespace Create {
