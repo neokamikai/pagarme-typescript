@@ -43,6 +43,7 @@ import IAutomaticAnticipationSettingsV5 from './@types/interfaces/api/common/v5/
 import IRecipientGatewayRecipientV5 from './@types/interfaces/api/common/recipient/v5/gateway';
 import ITransferSettingsV5 from './@types/interfaces/api/common/v5/settings/transfer';
 import RecipientPaymentModeV5Type from './@types/enums/recipient/payment-mode/v5';
+import IUpdateRecipientPayload from './@types/interfaces/api/request-payloads/v5/recipient/update';
 
 export { IPaymentV5 };
 export namespace PagarMe {
@@ -136,6 +137,14 @@ export namespace PagarMe {
             }
             export namespace Response {
               export type Body = ApiResponses.V5.Recipient.Create;
+            }
+          }
+          export namespace Update {
+            export namespace Request {
+              export type Payload = IUpdateRecipientPayload;
+            }
+            export namespace Response {
+              export type Body = ApiResponses.V5.Recipient.Update;
             }
           }
         }
