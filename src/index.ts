@@ -44,6 +44,9 @@ import IRecipientGatewayRecipientV5 from './@types/interfaces/api/common/recipie
 import ITransferSettingsV5 from './@types/interfaces/api/common/v5/settings/transfer';
 import RecipientPaymentModeV5Type from './@types/enums/recipient/payment-mode/v5';
 import IUpdateRecipientPayload from './@types/interfaces/api/request-payloads/v5/recipient/update';
+import ISplitV5 from './@types/interfaces/api/request-payloads/v5/order/create/split';
+import ISplitOptionsV5 from './@types/interfaces/api/request-payloads/v5/order/create/split/options';
+import SplitTypeEnumV5 from './@types/enums/split-type/v5';
 
 export { IPaymentV5 };
 export namespace PagarMe {
@@ -162,6 +165,11 @@ export namespace PagarMe {
             export namespace Request {
               export type OrderPayload = ICreateOrderRequestPayloadV5;
               export type OrderItem = ICreateOrderRequestPayloadItemV5;
+              export type Split = ISplitV5;
+              export namespace Enums {
+                export type SplitType = SplitTypeEnumV5;
+              }
+              export type SplitOptions = ISplitOptionsV5;
             }
           }
         }
