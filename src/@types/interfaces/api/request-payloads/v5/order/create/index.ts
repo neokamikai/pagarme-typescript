@@ -6,6 +6,7 @@ import IDevice from 'src/@types/interfaces/api/common/v5/device';
 import IGeoLocation from 'src/@types/interfaces/api/common/v5/geo-location';
 import ISubMerchant from 'src/@types/interfaces/api/common/v5/sub-merchant';
 import ICreateOrderPayloadItem from './item';
+import ISplit from './split';
 
 export default interface ICreateOrderPayload {
   /**
@@ -69,5 +70,8 @@ export default interface ICreateOrderPayload {
    * Dados de facilitadores de pagamento.
    */
   SubMerchant?: ISubMerchant
-
+  /**
+   * Dados para o split de pagamentos.
+   */
+  split?: Array<ISplit>
 }
