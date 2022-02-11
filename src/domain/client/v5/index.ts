@@ -7,6 +7,7 @@ import Responses from 'src/@types/interfaces/api/responses';
 import IUpdateReceiverPayload from 'src/@types/interfaces/api/request-payloads/v5/recipient/update';
 import IUpdateReceiverBankAccountPayload from 'src/@types/interfaces/api/request-payloads/v5/recipient/update/bank-account';
 import IUpdateReceiverTransferSettingsPayload from 'src/@types/interfaces/api/request-payloads/v5/recipient/transfer/settings';
+import IListRecipientsPayload from 'src/@types/interfaces/api/request-payloads/v5/recipient/list';
 
 interface IExecOptions {
   method: Method
@@ -113,6 +114,17 @@ export default class ClientV5 {
       method: 'PATCH',
       url: `/recipients/${recipientId}/default-bank-account`,
       body: payload,
+    });
+  }
+
+  /**
+   * List Recipients
+   */
+  public listRecipients(params: IListRecipientsPayload = {}) {
+    return this.exec<Responses.V5.Recipient.List>({
+      method: 'GET',
+      url: '/recipients',
+      query: params,
     });
   }
 
