@@ -128,6 +128,13 @@ export default class ClientV5 {
     });
   }
 
+  public getRecipient(recipientId: string) {
+    return this.exec<Responses.V5.Recipient.Detail>({
+      method: 'GET',
+      url: `/recipients/${recipientId}`,
+    });
+  }
+
   public getRecipientBalance(recipientId: string) {
     return this.exec<Responses.V5.Recipient.Balance>({
       method: 'GET',

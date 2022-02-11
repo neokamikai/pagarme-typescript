@@ -168,6 +168,17 @@ export namespace PagarMe {
               export type Body = ApiResponses.V5.Recipient.List;
             }
           }
+          export namespace Detail {
+            export namespace Request {
+              /**
+               * Recipient Id
+               */
+              export type Payload = string;
+            }
+            export namespace Response {
+              export type Body = ApiResponses.V5.Recipient.Detail;
+            }
+          }
         }
         export namespace Order {
           export namespace Create {
