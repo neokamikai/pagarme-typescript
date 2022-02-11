@@ -47,6 +47,7 @@ import IUpdateRecipientPayload from './@types/interfaces/api/request-payloads/v5
 import ISplitV5 from './@types/interfaces/api/request-payloads/v5/order/create/split';
 import ISplitOptionsV5 from './@types/interfaces/api/request-payloads/v5/order/create/split/options';
 import SplitTypeEnumV5 from './@types/enums/split-type/v5';
+import IListRecipientsPayload from './@types/interfaces/api/request-payloads/v5/recipient/list';
 
 export { IPaymentV5 };
 export namespace PagarMe {
@@ -157,6 +158,14 @@ export namespace PagarMe {
             }
             export namespace Response {
               export type Body = ApiResponses.V5.Recipient.Balance;
+            }
+          }
+          export namespace List {
+            export namespace Request {
+              export type Payload = IListRecipientsPayload;
+            }
+            export namespace Response {
+              export type Body = ApiResponses.V5.Recipient.List;
             }
           }
         }
