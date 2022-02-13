@@ -10,7 +10,7 @@ import IUpdateReceiverTransferSettingsPayload from 'src/@types/interfaces/api/re
 import IListRecipientsPayload from 'src/@types/interfaces/api/request-payloads/v5/recipient/list';
 import IListOrdersPayload from 'src/@types/interfaces/api/request-payloads/v5/order/list';
 import IListResponse from 'src/@types/interfaces/api/responses/list';
-import OrderV5 from 'src/@types/interfaces/api/common/v5/order';
+import OrderV5 from 'src/@types/interfaces/api/responses/common/v5/order';
 
 interface IExecOptions {
   method: Method
