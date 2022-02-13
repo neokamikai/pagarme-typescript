@@ -8,6 +8,9 @@ import IUpdateReceiverPayload from 'src/@types/interfaces/api/request-payloads/v
 import IUpdateReceiverBankAccountPayload from 'src/@types/interfaces/api/request-payloads/v5/recipient/update/bank-account';
 import IUpdateReceiverTransferSettingsPayload from 'src/@types/interfaces/api/request-payloads/v5/recipient/transfer/settings';
 import IListRecipientsPayload from 'src/@types/interfaces/api/request-payloads/v5/recipient/list';
+import IListOrdersPayload from 'src/@types/interfaces/api/request-payloads/v5/order/list';
+import IListResponse from 'src/@types/interfaces/api/responses/list';
+import OrderV5 from 'src/@types/interfaces/api/common/v5/order';
 
 interface IExecOptions {
   method: Method
@@ -64,6 +67,17 @@ export default class ClientV5 {
       method: 'POST',
       url: '/orders',
       body: payload,
+    });
+  }
+
+  /**
+  * listOrders
+  */
+  public listOrders(payload: IListOrdersPayload) {
+    return this.exec<IListResponse<OrderV5>>({
+      method: 'GET',
+      url: '/orders',
+      query: payload,
     });
   }
 
