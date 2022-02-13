@@ -48,6 +48,13 @@ import ISplitV5 from './@types/interfaces/api/request-payloads/v5/order/create/s
 import ISplitOptionsV5 from './@types/interfaces/api/request-payloads/v5/order/create/split/options';
 import SplitTypeEnumV5 from './@types/enums/split-type/v5';
 import IListRecipientsPayload from './@types/interfaces/api/request-payloads/v5/recipient/list';
+import IListOrdersPayload from './@types/interfaces/api/request-payloads/v5/order/list';
+import IListResponse from './@types/interfaces/api/responses/list';
+import OrderV5 from './@types/interfaces/api/responses/common/v5/order';
+import OrderV5Item from './@types/interfaces/api/responses/common/v5/order/item';
+import OrderV5Charge from './@types/interfaces/api/responses/common/v5/order/charge';
+import CustomerV5 from './@types/interfaces/api/responses/common/v5/customer';
+import CustomerDocumentType, { CustomerDocumentTypeEnums } from './@types/enums/customer/document/type';
 
 export { IPaymentV5 };
 export namespace PagarMe {
@@ -69,6 +76,17 @@ export namespace PagarMe {
             export type Individual = typeof CustomerTypeEnums.CustomerTypeIndividual;
             export type Comçany = typeof CustomerTypeEnums.CustomerTypeCompany;
           }
+          export namespace DocumentType {
+            export type Individual = typeof CustomerDocumentTypeEnums
+              .CustomerDocumentTypeIndividual;
+            export type Corporation = typeof CustomerDocumentTypeEnums
+              .CustomerDocumentTypeCorporation;
+            export type Passport = typeof CustomerDocumentTypeEnums
+              .CustomerDocumentTypePassport;
+            export type Other = typeof CustomerDocumentTypeEnums
+              .CustomerDocumentTypeOther;
+          }
+          export type DocumentType = CustomerDocumentType;
         }
         export namespace Payment {
           export type Method = PaymentMethodType;
@@ -90,6 +108,18 @@ export namespace PagarMe {
           export type IRecipientGatewayRecipient = IRecipientGatewayRecipientV5;
           export type IAutomaticAnticipationSettings = IAutomaticAnticipationSettingsV5;
         }
+        export namespace Order {
+          export type Item = OrderV5Item;
+          export type Charge = OrderV5Charge;
+        }
+        /**
+         * Existing Order
+         */
+        export type Order = OrderV5;
+        /**
+         * Existing Customer
+         */
+        export type Customer = CustomerV5;
         export type IBankAccount = IBankAccountV5;
         export type PersonType = PersonTypeV5;
         export type IPayment = IPaymentV5;
@@ -100,6 +130,7 @@ export namespace PagarMe {
         export type IPayments = IPaymentsV5;
         export type IDevice = IDeviceInfo;
         export type IRecipient = IRecipientV5;
+
       }
       export namespace Payment {
         export type ICreditCard = IPaymentCreditCardV5;
@@ -190,6 +221,14 @@ export namespace PagarMe {
                 export type SplitType = SplitTypeEnumV5;
               }
               export type SplitOptions = ISplitOptionsV5;
+            }
+          }
+          export namespace List {
+            export namespace Request {
+              export type Payload = IListOrdersPayload;
+            }
+            export namespace Response {
+              export type Body = IListResponse<OrderV5>;
             }
           }
         }
