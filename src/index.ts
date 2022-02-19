@@ -55,6 +55,13 @@ import OrderV5Item from './@types/interfaces/api/responses/common/v5/order/item'
 import OrderV5Charge from './@types/interfaces/api/responses/common/v5/order/charge';
 import CustomerV5 from './@types/interfaces/api/responses/common/v5/customer';
 import CustomerDocumentType, { CustomerDocumentTypeEnums } from './@types/enums/customer/document/type';
+import SubscriptionObjectV5 from './@types/interfaces/api/responses/common/v5/subscription';
+import SubscriptionItem from './@types/interfaces/api/responses/common/v5/subscription/common/item';
+import SubscriptionItemPricingScheme from './@types/interfaces/api/responses/common/v5/subscription/common/item/pricing-scheme';
+import IStandaloneSubscriptionRequestPayload from './@types/interfaces/api/request-payloads/v5/subscriptions/standalone';
+import ICreateStandaloneSubscriptionV5Response from './@types/interfaces/api/responses/namespaces/subscription/create';
+import SubscriptionIntervalType, { SubscriptionIntervalTypeEnums } from './@types/enums/subscriptions/interval-type';
+import SubscriptionBillingType, { SubscriptionBillingTypeEnums } from './@types/enums/subscriptions/billing-type';
 
 export { IPaymentV5 };
 export namespace PagarMe {
@@ -108,9 +115,35 @@ export namespace PagarMe {
           export type IRecipientGatewayRecipient = IRecipientGatewayRecipientV5;
           export type IAutomaticAnticipationSettings = IAutomaticAnticipationSettingsV5;
         }
+
         export namespace Order {
           export type Item = OrderV5Item;
           export type Charge = OrderV5Charge;
+        }
+        export namespace Subscription {
+          export type Item = SubscriptionItem;
+          export namespace Item {
+            export type PricingScheme = SubscriptionItemPricingScheme;
+          }
+          export namespace Enums {
+            export namespace Interval {
+              export type Type = SubscriptionIntervalType;
+              export namespace Type {
+                export type Day = typeof SubscriptionIntervalTypeEnums.day;
+                export type Week = typeof SubscriptionIntervalTypeEnums.week;
+                export type Month = typeof SubscriptionIntervalTypeEnums.month;
+                export type Year = typeof SubscriptionIntervalTypeEnums.year;
+              }
+            }
+            export namespace Billing {
+              export type Type = SubscriptionBillingType;
+              export namespace Type {
+                export type PrePaid = typeof SubscriptionBillingTypeEnums.prepaid;
+                export type PostPaid = typeof SubscriptionBillingTypeEnums.postpaid;
+                export type ExactDay = typeof SubscriptionBillingTypeEnums.exactday;
+              }
+            }
+          }
         }
         /**
          * Existing Order
@@ -130,7 +163,12 @@ export namespace PagarMe {
         export type IPayments = IPaymentsV5;
         export type IDevice = IDeviceInfo;
         export type IRecipient = IRecipientV5;
-
+        export type Subscription = SubscriptionObjectV5;
+        export namespace Payload {
+          export type CardData = IPaymentCreditCardDetailsV5;
+          export type ExistingCard = { card_id: string };
+          export type TokenizedCard = { card_token: string };
+        }
       }
       export namespace Payment {
         export type ICreditCard = IPaymentCreditCardV5;
@@ -229,6 +267,18 @@ export namespace PagarMe {
             }
             export namespace Response {
               export type Body = IListResponse<OrderV5>;
+            }
+          }
+        }
+        export namespace Subscription {
+          export namespace Standalone {
+            export namespace Create {
+              export namespace Request {
+                export type Payload = IStandaloneSubscriptionRequestPayload;
+              }
+              export namespace Response {
+                export type Body = ICreateStandaloneSubscriptionV5Response;
+              }
             }
           }
         }
