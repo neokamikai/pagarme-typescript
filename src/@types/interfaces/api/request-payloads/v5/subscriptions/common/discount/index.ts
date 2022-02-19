@@ -1,4 +1,4 @@
-import DiscountType from 'src/@types/enums/discount-type/v5';
+import DiscountType from 'src/@types/enums/subscriptions/discount-type/v5';
 
 export default interface ISubscriptionDiscount {
   cycles: number
