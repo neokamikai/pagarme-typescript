@@ -11,6 +11,7 @@ import IListRecipientsPayload from 'src/@types/interfaces/api/request-payloads/v
 import IListOrdersPayload from 'src/@types/interfaces/api/request-payloads/v5/order/list';
 import IListResponse from 'src/@types/interfaces/api/responses/list';
 import OrderV5 from 'src/@types/interfaces/api/responses/common/v5/order';
+import IStandaloneSubscriptionRequestPayload from 'src/@types/interfaces/api/request-payloads/v5/subscriptions/standalone';
 
 interface IExecOptions {
   method: Method
@@ -153,6 +154,16 @@ export default class ClientV5 {
     return this.exec<Responses.V5.Recipient.Balance>({
       method: 'GET',
       url: `/recipients/${recipientId}/balance`,
+    });
+  }
+
+  public createStandaloneSubscription(
+    params: IStandaloneSubscriptionRequestPayload,
+  ) {
+    return this.exec<Responses.V5.Subscription.Standalone.Create>({
+      method: 'POST',
+      url: '/subscriptions',
+      body: params,
     });
   }
 }
