@@ -32,7 +32,7 @@ export default class ClientV5 {
     this.axios = axios.create({
       baseURL: `${baseUrl}/core/v5`, // ['https', ':', '//', 'api', '.pagarme.', 'com'].join(''),
       headers: {
-        Authorization: `Basic ${Buffer.from(`${options.apiKey}`).toString('base64')}`,
+        Authorization: `Basic ${Buffer.from([`${options.apiKey}`.replace(/[:]$/, ''), ''].join(':')).toString('base64')}`,
         'Content-Type': 'application/json',
       },
     });
