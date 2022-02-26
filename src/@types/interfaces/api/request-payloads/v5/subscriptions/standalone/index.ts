@@ -56,6 +56,6 @@ export default interface IStandaloneSubscriptionRequestPayload extends IBaseSubs
    * É obrigatório o envio de uma dessas identificações, caso
    * o payment_method seja credit_card ou debit_card.
    */
-  card?: Array<ICreditCardPaymentCreditCardCard | { card_id: string } | { card_token: string }>
+  card?: ICreditCardPaymentCreditCardCard | { card_id: string } | { card_token: string }
 
 }
