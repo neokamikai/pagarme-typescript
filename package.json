@@ -1,6 +1,6 @@
 {
   "name": "@tiscode/pagarme",
-  "version": "0.1.18.1",
+  "version": "0.1.19",
   "description": "",
   "main": "dist/src/index.js",
   "files": [
@@ -52,8 +52,7 @@
     "typescript-transform-paths": "^2.2.3"
   },
   "dependencies": {
-    "axios": "^0.21.1",
-    "credit-card-type": "^9.1.0",
-    "pagarme": "^4.16.0"
+    "axios": "^0.26.0",
+    "credit-card-type": "^9.1.0"
   }
 }
